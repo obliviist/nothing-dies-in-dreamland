@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.5
+height = 10.0
+
+[node name="TreeStaticBody" type="StaticBody"]
+
+[node name="TreeCollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+shape = SubResource( 1 )

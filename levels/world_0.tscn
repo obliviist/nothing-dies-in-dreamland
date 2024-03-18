@@ -1,0 +1,266 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://assets/mountain_tscn/cabin_ylw.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/mountain_tscn/mountain.tscn" type="PackedScene" id=4]
+[ext_resource path="res://shaders/watershader.tres" type="Material" id=5]
+[ext_resource path="res://assets/mountain_tscn/cliff.tscn" type="PackedScene" id=6]
+[ext_resource path="res://levels/world_0.gd" type="Script" id=7]
+[ext_resource path="res://environment/world_environment.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/gui/gui.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/mountain_tscn/chair.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/mountain_tscn/table.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/mountain_tscn/shovel.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/mountain_tscn/tree_big.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/mountain_tscn/fish_1.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/mountain_tscn/aqua_trough.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/interactable.gd" type="Script" id=16]
+[ext_resource path="res://assets/mountain_tscn/ladder.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/mountain_tscn/critter.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/mountain_tscn/mount_small.tscn" type="PackedScene" id=19]
+[ext_resource path="res://environment/mtn_env.tres" type="Environment" id=20]
+
+[sub_resource type="BoxShape" id=12]
+
+[sub_resource type="BoxShape" id=23]
+extents = Vector3( 1.36797, 0.742842, 1 )
+
+[sub_resource type="BoxShape" id=22]
+extents = Vector3( 1, 2.55915, 0.168051 )
+
+[sub_resource type="BoxShape" id=13]
+
+[sub_resource type="BoxShape" id=14]
+
+[sub_resource type="CapsuleShape" id=15]
+
+[sub_resource type="Animation" id=17]
+resource_name = "fish_bob"
+length = 1.66667
+loop = true
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Fish_1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, 0.7, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.0666667, 1, 0, 0.703604, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.133333, 1, 0, 0.726763, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.333333, 1, 0, 0.853032, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.4, 1, 0, 0.872731, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.466667, 1, 0, 0.870461, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.533333, 1, 0, 0.853308, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.6, 1, 0, 0.826003, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1, 1, 0, 0.631203, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.06667, 1, 0, 0.613267, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.13333, 1, 0, 0.600474, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.2, 1, 0, 0.593353, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.26667, 1, 0, 0.592775, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.33333, 1, 0, 0.602838, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.6, 1, 0, 0.692019, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.66667, 1, 0, 0.7, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5 )
+
+[sub_resource type="Animation" id=18]
+resource_name = "fish_bob"
+length = 1.66667
+loop = true
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Fish_1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, 0.7, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.0666667, 1, 0, 0.703604, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.133333, 1, 0, 0.726763, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.333333, 1, 0, 0.853032, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.4, 1, 0, 0.872731, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.466667, 1, 0, 0.870461, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.533333, 1, 0, 0.853308, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.6, 1, 0, 0.826003, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1, 1, 0, 0.631203, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.06667, 1, 0, 0.613267, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.13333, 1, 0, 0.600474, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.2, 1, 0, 0.593353, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.26667, 1, 0, 0.592775, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.33333, 1, 0, 0.602838, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.6, 1, 0, 0.692019, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.66667, 1, 0, 0.7, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5 )
+
+[sub_resource type="BoxShape" id=19]
+extents = Vector3( 1, 1, 1.20778 )
+
+[sub_resource type="BoxShape" id=20]
+
+[sub_resource type="PlaneMesh" id=10]
+size = Vector2( 5, 5 )
+subdivide_width = 16
+subdivide_depth = 16
+
+[sub_resource type="PlaneMesh" id=21]
+size = Vector2( 512, 512 )
+subdivide_width = 16
+subdivide_depth = 16
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 1000, 1, 1000 )
+
+[node name="World_0" type="Spatial"]
+script = ExtResource( 7 )
+
+[node name="Environment" type="Spatial" parent="."]
+
+[node name="WorldEnvironment" parent="Environment" instance=ExtResource( 8 )]
+environment = ExtResource( 20 )
+
+[node name="Player" parent="Environment" groups=["player"] instance=ExtResource( 3 )]
+transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -12.754, 64.4388, -4.05281 )
+
+[node name="Chair 1" type="RigidBody" parent="Environment"]
+transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 4.27719, 65.3357, -6.36934 )
+script = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Chair 1"]
+transform = Transform( 0.7, 0, 0, 0, 0.9, 0, 0, 0, 1, 0, -0.175758, 0 )
+shape = SubResource( 12 )
+
+[node name="Chair" parent="Environment/Chair 1" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.10014, 0 )
+
+[node name="Chair 2" type="RigidBody" parent="Environment"]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 0.722966, 65.3357, -5.27612 )
+script = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Chair 2"]
+transform = Transform( 0.7, 0, 0, 0, 0.9, 0, 0, 0, 1, 0, -0.175758, 0 )
+shape = SubResource( 12 )
+
+[node name="Chair" parent="Environment/Chair 2" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.10014, 0 )
+
+[node name="Bug" type="RigidBody" parent="Environment"]
+transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 2.90097, 65.2197, -4.64228 )
+script = ExtResource( 16 )
+
+[node name="Critter" parent="Environment/Bug" instance=ExtResource( 18 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Bug"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.363716, 0 )
+shape = SubResource( 23 )
+
+[node name="Ladder" type="RigidBody" parent="Environment"]
+transform = Transform( -0.258819, -0.358902, 0.896773, 0, 0.928408, 0.371562, -0.965926, 0.0961675, -0.24029, 15.7601, 66.5548, -0.417825 )
+script = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Ladder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.261489, 0 )
+shape = SubResource( 22 )
+
+[node name="Ladder_model" parent="Environment/Ladder" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.73247, 0 )
+
+[node name="Rusty Table" type="RigidBody" parent="Environment"]
+transform = Transform( -0.979547, 0, -0.201215, 0, 1, 0, 0.201215, 0, -0.979547, 2.87618, 64.6138, -4.54116 )
+script = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Rusty Table"]
+transform = Transform( 0.8, 0, -2.23517e-08, 0, 0.496166, 0, 4.47035e-08, 0, 0.56, 0, -0.0538712, 0 )
+shape = SubResource( 13 )
+
+[node name="Table" parent="Environment/Rusty Table" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.550659, 0 )
+
+[node name="Shovel" type="RigidBody" parent="Environment"]
+transform = Transform( -0.258819, 0.338448, 0.904691, 0, 0.936605, -0.350387, -0.965926, -0.0906869, -0.242411, 2.14614, 65.0373, -0.581658 )
+script = ExtResource( 16 )
+
+[node name="Shovel" parent="Environment/Shovel" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.12851, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Shovel"]
+transform = Transform( 0.32, 0, 0, 0, 1.1, 0, 0, 0, 0.16, 0, 0, 0 )
+shape = SubResource( 14 )
+
+[node name="Jello" type="RigidBody" parent="Environment"]
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 19.5679, 65.3431, -8.36026 )
+
+[node name="Fish_1" parent="Environment/Jello" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.679661, -0.391004 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Jello"]
+transform = Transform( 1, 0, 0, 0, 0.6, 0, 0, 0, 0.77, 0, 0, 0 )
+shape = SubResource( 15 )
+
+[node name="Blue" type="RigidBody" parent="Environment"]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 21.6748, 65.2864, -10.4173 )
+script = ExtResource( 16 )
+
+[node name="Fish_1" parent="Environment/Blue" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, -0.679665, -0.391005 )
+
+[node name="Fish_1" parent="Environment/Blue/Fish_1" index="0"]
+transform = Transform( 0, 0.5, 0, -0.5, 0, 0, 0, 0, 0.5, 0, 0.7, 0 )
+
+[node name="AnimationPlayer" parent="Environment/Blue/Fish_1" index="1"]
+anims/fish_bob = SubResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Blue"]
+transform = Transform( 1, 0, 1.49012e-08, 0, 0.6, 0, 0, 0, 0.77, 0, 0, 0 )
+shape = SubResource( 15 )
+
+[node name="Wanda" type="RigidBody" parent="Environment"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.2847, 65.1851, -6.49259 )
+script = ExtResource( 16 )
+
+[node name="Fish_1" parent="Environment/Wanda" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.679661, -0.391004 )
+
+[node name="Fish_1" parent="Environment/Wanda/Fish_1" index="0"]
+transform = Transform( 0, 0.5, 0, -0.5, 0, 0, 0, 0, 0.5, 0, 0.7, 0 )
+
+[node name="AnimationPlayer" parent="Environment/Wanda/Fish_1" index="1"]
+anims/fish_bob = SubResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Wanda"]
+transform = Transform( 1, 0, 0, 0, 0.6, 0, 0, 0, 0.77, 0, 0, 0 )
+shape = SubResource( 15 )
+
+[node name="Tank" type="RigidBody" parent="Environment"]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 19.493, 64.3157, -8.28666 )
+script = ExtResource( 16 )
+
+[node name="Tank" parent="Environment/Tank" instance=ExtResource( 15 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Tank"]
+transform = Transform( 5.16404, 0, 0, 0, 0.166555, 0, 0, 0, 1.74923, 7.62939e-06, 0.209251, -0.0288882 )
+shape = SubResource( 19 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Environment/Tank"]
+transform = Transform( 5.07617, 0, 0, 0, 0.881157, 0, 0, 0, 0.2, 1.90735e-06, 1.1798, -1.86203 )
+shape = SubResource( 20 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Environment/Tank"]
+transform = Transform( 5.07617, 0, 0, 0, 0.881157, 0, 0, 0, 0.2, 1.90735e-06, 1.1798, 1.83852 )
+shape = SubResource( 20 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Environment/Tank"]
+transform = Transform( 0, 0, -0.2, 0, 0.881157, 0, 1.52285, 0, 0, -5, 1.1798, -0.161479 )
+shape = SubResource( 20 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Environment/Tank"]
+transform = Transform( 0, 0, -0.2, 0, 0.881157, 0, 1.52285, 0, 0, 4.78757, 1.1798, -0.161479 )
+shape = SubResource( 20 )
+
+[node name="Water" type="MeshInstance" parent="Environment/Tank"]
+transform = Transform( 1.9, 0, 0, 0, 0.0768544, 0, 0, 0, 0.7, 0, 1.14887, 0 )
+mesh = SubResource( 10 )
+material/0 = ExtResource( 5 )
+
+[node name="Cabin_Ylw" parent="Environment" instance=ExtResource( 1 )]
+transform = Transform( -0.965925, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965925, 7.96799, 63.9111, -0.625209 )
+
+[node name="Cliff" parent="Environment" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 0 )
+
+[node name="Mountain_Main" parent="Environment" instance=ExtResource( 4 )]
+
+[node name="Mount_Small" parent="Environment" instance=ExtResource( 19 )]
+transform = Transform( 0.909845, 0, -0.414947, 0, 1, 0, 0.414947, 0, 0.909845, 0, 0, 0 )
+
+[node name="Tree_Big1" parent="Environment" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.754393, 63.4622, 16.4296 )
+
+[node name="Tree_Big2" parent="Environment" instance=ExtResource( 13 )]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 20, 63.4622, 5 )
+
+[node name="Water" type="MeshInstance" parent="."]
+mesh = SubResource( 21 )
+material/0 = ExtResource( 5 )
+
+[node name="Death" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -34.5053, 0 )
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Death"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 34.6197, 0 )
+shape = SubResource( 11 )
+
+[node name="GUI" parent="." instance=ExtResource( 9 )]
+
+[connection signal="body_entered" from="Death" to="Environment/Player" method="_on_Death_body_entered"]
+
+[editable path="Environment/Bug/Critter"]
+[editable path="Environment/Jello/Fish_1"]
+[editable path="Environment/Blue/Fish_1"]
+[editable path="Environment/Wanda/Fish_1"]

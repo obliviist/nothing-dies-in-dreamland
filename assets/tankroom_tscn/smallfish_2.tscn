@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://prototype_assets/TankRoom_Exports_gltf/smallFish_2.glb" type="PackedScene" id=1]
+[ext_resource path="res://prototype_assets/TankRoom_Exports_gltf/SMALLFISH_2.material" type="Material" id=2]
+
+[sub_resource type="Animation" id=2]
+resource_name = "fish_bob"
+length = 1.66667
+loop = true
+tracks/0/type = "transform"
+tracks/0/path = NodePath("smallFish_2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, 0.7, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.0666667, 1, 0, 0.703604, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.133333, 1, 0, 0.726763, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.333333, 1, 0, 0.853032, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.4, 1, 0, 0.872731, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.466667, 1, 0, 0.870461, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.533333, 1, 0, 0.853308, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.6, 1, 0, 0.826003, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1, 1, 0, 0.631203, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.06667, 1, 0, 0.613267, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.13333, 1, 0, 0.600474, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.2, 1, 0, 0.593353, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.26667, 1, 0, 0.592775, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.33333, 1, 0, 0.602838, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.6, 1, 0, 0.692019, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.66667, 1, 0, 0.7, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5 )
+
+[node name="smallFish_2" instance=ExtResource( 1 )]
+
+[node name="smallFish_2" parent="." index="0"]
+material/0 = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="smallFish_2" index="0"]
+root_node = NodePath("../..")
+autoplay = "fish_bob"
+anims/fish_bob = SubResource( 2 )

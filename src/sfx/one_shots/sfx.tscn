@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/sfx/one_shots/Fish_Small_Jump_PSEF.130.wav" type="AudioStream" id=1]
+
+[node name="Sfx" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -2.622

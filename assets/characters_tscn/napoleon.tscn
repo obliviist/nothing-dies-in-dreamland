@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://prototype_assets/NPCs_Exports_gltf/Napoleon_NPC.material" type="Material" id=1]
+[ext_resource path="res://prototype_assets/NPCs_Exports_gltf/Napoleon.glb" type="PackedScene" id=2]
+[ext_resource path="res://assets/characters_tscn/characters_animations/npc_calm.tres" type="Animation" id=3]
+[ext_resource path="res://assets/characters_tscn/characters_animations/npc_fear.tres" type="Animation" id=4]
+
+[node name="Napoleon" instance=ExtResource( 2 )]
+
+[node name="Napoleon_NPC" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Skeleton" parent="Napoleon_NPC" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+
+[node name="Model_NPC" parent="Napoleon_NPC/Skeleton" index="0"]
+material/0 = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Napoleon_NPC/Skeleton" index="1"]
+root_node = NodePath("../../..")
+autoplay = "npc_fear"
+anims/npc_calm = ExtResource( 3 )
+anims/npc_fear = ExtResource( 4 )

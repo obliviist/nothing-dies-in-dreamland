@@ -1,0 +1,472 @@
+[gd_scene load_steps=57 format=2]
+
+[ext_resource path="res://assets/mountain_tscn/cabin_ylw.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/mountain_tscn/cliff.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/mountain_tscn/mountain.tscn" type="PackedScene" id=3]
+[ext_resource path="res://shaders/watershader.tres" type="Material" id=4]
+[ext_resource path="res://assets/fonts/Lato-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://src/gui/menucamera_anim.tres" type="Animation" id=6]
+[ext_resource path="res://src/gui/gozo_font_btn.tres" type="DynamicFont" id=7]
+[ext_resource path="res://src/gui/howtoplay_popup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/gui/start_screen.gd" type="Script" id=9]
+[ext_resource path="res://src/gui/fps_label.tscn" type="PackedScene" id=10]
+[ext_resource path="res://environment/world_environment.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/gui/settings_menu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/mountain_tscn/chair.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/mountain_tscn/table.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/mountain_tscn/tree_big.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/mountain_tscn/fish_1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/mountain_tscn/aqua_trough.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/mountain_tscn/mount_small.tscn" type="PackedScene" id=18]
+[ext_resource path="res://environment/mtn_env.tres" type="Environment" id=19]
+[ext_resource path="res://assets/characters_tscn/napoleon.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/trees_tscn/tree36.tscn" type="PackedScene" id=21]
+[ext_resource path="res://assets/trees_tscn/tree17.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/trees_tscn/bush05.tscn" type="PackedScene" id=23]
+[ext_resource path="res://assets/mountain_tscn/lighthouse_0.tscn" type="PackedScene" id=24]
+[ext_resource path="res://src/gui/controls_popup.tscn" type="PackedScene" id=25]
+
+[sub_resource type="PlaneMesh" id=13]
+size = Vector2( 512, 512 )
+subdivide_width = 16
+subdivide_depth = 16
+
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 63, -60 ) ]
+}
+
+[sub_resource type="BoxShape" id=34]
+
+[sub_resource type="BoxShape" id=35]
+
+[sub_resource type="BoxShape" id=36]
+extents = Vector3( 1, 1, 1.20778 )
+
+[sub_resource type="BoxShape" id=37]
+
+[sub_resource type="PlaneMesh" id=43]
+size = Vector2( 5, 5 )
+subdivide_width = 16
+subdivide_depth = 16
+
+[sub_resource type="Animation" id=39]
+resource_name = "fish_bob"
+length = 1.66667
+loop = true
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Fish_1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, 0.7, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.0666667, 1, 0, 0.703604, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.133333, 1, 0, 0.726763, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.333333, 1, 0, 0.853032, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.4, 1, 0, 0.872731, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.466667, 1, 0, 0.870461, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.533333, 1, 0, 0.853308, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.6, 1, 0, 0.826003, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1, 1, 0, 0.631203, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.06667, 1, 0, 0.613267, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.13333, 1, 0, 0.600474, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.2, 1, 0, 0.593353, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.26667, 1, 0, 0.592775, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.33333, 1, 0, 0.602838, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.6, 1, 0, 0.692019, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.66667, 1, 0, 0.7, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5 )
+
+[sub_resource type="CapsuleShape" id=40]
+
+[sub_resource type="Animation" id=41]
+resource_name = "fish_bob"
+length = 1.66667
+loop = true
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Fish_1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, 0.7, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.0666667, 1, 0, 0.703604, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.133333, 1, 0, 0.726763, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.333333, 1, 0, 0.853032, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.4, 1, 0, 0.872731, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.466667, 1, 0, 0.870461, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.533333, 1, 0, 0.853308, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.6, 1, 0, 0.826003, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1, 1, 0, 0.631203, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.06667, 1, 0, 0.613267, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.13333, 1, 0, 0.600474, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.2, 1, 0, 0.593353, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.26667, 1, 0, 0.592775, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.33333, 1, 0, 0.602838, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.6, 1, 0, 0.692019, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.66667, 1, 0, 0.7, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5 )
+
+[sub_resource type="Animation" id=42]
+resource_name = "fish_bob"
+length = 1.66667
+loop = true
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Fish_1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, 0.7, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.0666667, 1, 0, 0.703604, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.133333, 1, 0, 0.726763, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.333333, 1, 0, 0.853032, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.4, 1, 0, 0.872731, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.466667, 1, 0, 0.870461, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.533333, 1, 0, 0.853308, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 0.6, 1, 0, 0.826003, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1, 1, 0, 0.631203, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.06667, 1, 0, 0.613267, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.13333, 1, 0, 0.600474, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.2, 1, 0, 0.593353, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.26667, 1, 0, 0.592775, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.33333, 1, 0, 0.602838, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.6, 1, 0, 0.692019, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5, 1.66667, 1, 0, 0.7, 0, 0, 0, -0.707107, 0.707107, 0.5, 0.5, 0.5 )
+
+[sub_resource type="DynamicFontData" id=24]
+font_path = "res://src/gui/gozo.ttf"
+
+[sub_resource type="DynamicFont" id=22]
+size = 24
+font_data = SubResource( 24 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="DynamicFontData" id=25]
+font_path = "res://src/gui/gozo.ttf"
+
+[sub_resource type="DynamicFont" id=23]
+size = 48
+font_data = SubResource( 25 )
+
+[sub_resource type="DynamicFontData" id=27]
+antialiased = false
+font_path = "res://src/gui/gozo.ttf"
+
+[sub_resource type="DynamicFont" id=16]
+font_data = SubResource( 27 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0.129412, 0.129412, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 6
+border_width_right = 6
+border_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+border_blend = true
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id=29]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 4
+border_width_right = 4
+border_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+border_blend = true
+
+[sub_resource type="DynamicFontData" id=30]
+antialiased = false
+font_path = "res://src/gui/gozo.ttf"
+
+[sub_resource type="DynamicFont" id=31]
+size = 6
+font_data = SubResource( 30 )
+
+[sub_resource type="DynamicFont" id=32]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=33]
+default_font = SubResource( 32 )
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_disabled = Color( 0.901961, 0.901961, 0.901961, 0.2 )
+Button/colors/font_color_hover = Color( 0.498039, 1, 0, 1 )
+Button/colors/font_color_pressed = Color( 0.941176, 0.235294, 0.47451, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = SubResource( 22 )
+Button/styles/disabled = SubResource( 7 )
+Button/styles/focus = SubResource( 8 )
+Button/styles/hover = SubResource( 9 )
+Button/styles/normal = SubResource( 10 )
+Button/styles/pressed = SubResource( 11 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = SubResource( 23 )
+Label/styles/normal = null
+TabContainer/fonts/font = SubResource( 16 )
+TabContainer/styles/panel = SubResource( 26 )
+TabContainer/styles/tab_bg = SubResource( 28 )
+TabContainer/styles/tab_fg = SubResource( 29 )
+Tabs/fonts/font = SubResource( 31 )
+
+[sub_resource type="DynamicFontData" id=45]
+font_path = "res://src/gui/gomarice_tomipop.ttf"
+
+[sub_resource type="DynamicFont" id=44]
+size = 53
+outline_size = 2
+outline_color = Color( 0.941176, 0.235294, 0.47451, 1 )
+font_data = SubResource( 45 )
+
+[node name="StartScreen" type="CanvasLayer"]
+script = ExtResource( 9 )
+
+[node name="Environment" type="Spatial" parent="."]
+
+[node name="Cliff" parent="Environment" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0 )
+
+[node name="WorldEnvironment" parent="Environment" instance=ExtResource( 11 )]
+environment = ExtResource( 19 )
+
+[node name="Water" type="MeshInstance" parent="Environment"]
+mesh = SubResource( 13 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 4 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="Environment"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Viewport" type="Viewport" parent="Environment/ViewportContainer"]
+size = Vector2( 1024, 600 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="Environment/ViewportContainer/Viewport"]
+transform = Transform( -1, 2.26267e-08, -8.44439e-08, 2.26267e-08, 1, 2.98023e-08, 8.44439e-08, 2.98023e-08, -1, 0, 63, -60 )
+fov = 60.5
+far = 1000.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Environment/ViewportContainer/Viewport/Camera"]
+autoplay = "menucamera_anim"
+anims/RESET = SubResource( 12 )
+anims/menucamera_anim = ExtResource( 6 )
+
+[node name="Chair1" type="RigidBody" parent="Environment"]
+transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 4.39583, 63.3357, -5.39633 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Chair1"]
+transform = Transform( 0.7, 0, 0, 0, 0.9, 0, 0, 0, 1, 0, -0.175758, 0 )
+shape = SubResource( 34 )
+
+[node name="Chair" parent="Environment/Chair1" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.10014, 0 )
+
+[node name="Chair2" type="RigidBody" parent="Environment"]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 1.07334, 63.3357, -4.69586 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Chair2"]
+transform = Transform( 0.7, 0, 0, 0, 0.9, 0, 0, 0, 1, 0, -0.175758, 0 )
+shape = SubResource( 34 )
+
+[node name="Chair" parent="Environment/Chair2" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.10014, 0 )
+
+[node name="Table1" type="RigidBody" parent="Environment"]
+transform = Transform( -0.979547, 0, -0.201215, 0, 1, 0, 0.201215, 0, -0.979547, 2.87618, 62.6138, -4.54116 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Table1"]
+transform = Transform( 0.8, 0, -2.23517e-08, 0, 0.496166, 0, 4.47035e-08, 0, 0.56, 0, -0.0538712, 0 )
+shape = SubResource( 35 )
+
+[node name="Table" parent="Environment/Table1" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.550659, 0 )
+
+[node name="Trough" type="RigidBody" parent="Environment"]
+transform = Transform( -0.707107, -0.5, -0.5, 0, 0.707107, -0.707107, 0.707107, -0.5, -0.5, 19.493, 110.985, -8.28666 )
+
+[node name="Aqua_Trough" parent="Environment/Trough" instance=ExtResource( 17 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Trough"]
+transform = Transform( 5.16404, 0, 0, 0, 0.166555, 0, 0, 0, 1.74923, 7.62939e-06, 0.209251, -0.0288882 )
+shape = SubResource( 36 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Environment/Trough"]
+transform = Transform( 5.07617, 0, 0, 0, 0.881157, 0, 0, 0, 0.2, 1.90735e-06, 1.1798, -1.86203 )
+shape = SubResource( 37 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Environment/Trough"]
+transform = Transform( 5.07617, 0, 0, 0, 0.881157, 0, 0, 0, 0.2, 1.90735e-06, 1.1798, 1.83852 )
+shape = SubResource( 37 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Environment/Trough"]
+transform = Transform( 0, 0, -0.2, 0, 0.881157, 0, 1.52285, 0, 0, -5, 1.1798, -0.161479 )
+shape = SubResource( 37 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Environment/Trough"]
+transform = Transform( 0, 0, -0.2, 0, 0.881157, 0, 1.52285, 0, 0, 4.78757, 1.1798, -0.161479 )
+shape = SubResource( 37 )
+
+[node name="Water" type="MeshInstance" parent="Environment/Trough"]
+transform = Transform( 1.9, 0, 0, 0, 0.0768544, 0, 0, 0, 0.7, 0, 1.14887, 0 )
+mesh = SubResource( 43 )
+material/0 = ExtResource( 4 )
+
+[node name="Lighthouse_1" parent="Environment" instance=ExtResource( 24 )]
+transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -11.5847, 61.577, 5.10592 )
+
+[node name="Cabin_Ylw" parent="Environment" instance=ExtResource( 1 )]
+transform = Transform( -0.965925, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965925, 7.71911, 61.7002, -0.558523 )
+
+[node name="Mountain_Main" parent="Environment" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+
+[node name="Mount_Small" parent="Environment" instance=ExtResource( 18 )]
+transform = Transform( 0.909845, 0, -0.414947, 0, 1, 0, 0.414947, 0, 0.909845, 0, -2, 0 )
+
+[node name="Fish1" type="RigidBody" parent="Environment"]
+transform = Transform( 0.5, -0.224144, -0.836516, -1.45851e-07, -0.965926, 0.258819, -0.866025, -0.129409, -0.482963, 18.8117, 111.086, -8.20298 )
+
+[node name="Fish_1" parent="Environment/Fish1" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.679661, -0.391004 )
+
+[node name="AnimationPlayer" parent="Environment/Fish1/Fish_1" index="1"]
+anims/fish_bob = SubResource( 39 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Fish1"]
+transform = Transform( 1, 0, 0, 0, 0.6, 0, 0, 0, 0.77, 0, 0, 0 )
+shape = SubResource( 40 )
+
+[node name="Fish2" type="RigidBody" parent="Environment"]
+transform = Transform( 0.965926, -0.0669875, -0.25, -1.45851e-07, -0.965926, 0.258819, -0.258819, -0.25, -0.933012, 20.7277, 111.029, -10.1135 )
+
+[node name="Fish_1" parent="Environment/Fish2" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, -0.679665, -0.391005 )
+
+[node name="AnimationPlayer" parent="Environment/Fish2/Fish_1" index="1"]
+anims/fish_bob = SubResource( 41 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Fish2"]
+transform = Transform( 1, 0, 1.49012e-08, 0, 0.6, 0, 0, 0, 0.77, 0, 0, 0 )
+shape = SubResource( 40 )
+
+[node name="Fish3" type="RigidBody" parent="Environment"]
+transform = Transform( -3.64173e-08, 0.258819, 0.965926, -1.45851e-07, -0.965926, 0.258819, 1, -1.31455e-07, 7.29254e-08, 15.9415, 110.928, -6.49258 )
+
+[node name="Fish_1" parent="Environment/Fish3" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.679661, -0.391004 )
+
+[node name="AnimationPlayer" parent="Environment/Fish3/Fish_1" index="1"]
+anims/fish_bob = SubResource( 42 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Fish3"]
+transform = Transform( 1, 0, 0, 0, 0.6, 0, 0, 0, 0.77, 0, 0, 0 )
+shape = SubResource( 40 )
+
+[node name="Napoleon" parent="Environment" instance=ExtResource( 20 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -1.68078, 62, -17.8159 )
+
+[node name="AnimationPlayer" parent="Environment/Napoleon/Napoleon_NPC/Skeleton" index="1"]
+autoplay = "npc_calm"
+
+[node name="AnimationPlayer" parent="Environment/Napoleon" index="1"]
+autoplay = "npc_calm"
+
+[node name="Trees" type="Spatial" parent="Environment"]
+
+[node name="Tree_Big1" parent="Environment/Trees" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.754393, 61.4622, 16.4296 )
+
+[node name="Tree_Big2" parent="Environment/Trees" instance=ExtResource( 15 )]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 20, 61.4622, 5 )
+
+[node name="tree_001" parent="Environment/Trees" instance=ExtResource( 21 )]
+transform = Transform( 0.0513076, 0, -0.998683, 0, 1, 0, 0.998683, 0, 0.0513076, -62.8713, 44.5722, 22.0395 )
+
+[node name="tree_002" parent="Environment/Trees" instance=ExtResource( 21 )]
+transform = Transform( -0.261229, 0, -0.965277, 0, 1, 0, 0.965277, 0, -0.261229, 64.3524, 45.5997, 8.2719 )
+
+[node name="tree_003" parent="Environment/Trees" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 98.4961, 37, 60.8276 )
+
+[node name="tree_004" parent="Environment/Trees" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.6284, 45, 32.2541 )
+
+[node name="bush05_001" parent="Environment" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.15375, 62, 10.3383 )
+
+[node name="bush05_002" parent="Environment" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5318, 62, -1.33597 )
+
+[node name="MainMenu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 33 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_top = 80
+custom_constants/margin_left = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer"]
+margin_left = 60.0
+margin_top = 80.0
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="Title" type="Label" parent="MainMenu/MarginContainer/VBoxContainer"]
+margin_right = 500.0
+margin_bottom = 54.0
+size_flags_horizontal = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 44 )
+text = "nothing dies in dreamland"
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu/MarginContainer/VBoxContainer"]
+margin_top = 58.0
+margin_right = 964.0
+margin_bottom = 118.0
+rect_min_size = Vector2( 0, 60 )
+
+[node name="StartBtn" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
+margin_top = 122.0
+margin_right = 133.0
+margin_bottom = 146.0
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 7 )
+text = "Start Game"
+
+[node name="HowToPlayBtn" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
+margin_top = 150.0
+margin_right = 150.0
+margin_bottom = 174.0
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 7 )
+text = "How To Play"
+
+[node name="ControlsBtn" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
+margin_top = 178.0
+margin_right = 94.0
+margin_bottom = 202.0
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 7 )
+text = "Controls"
+
+[node name="SettingsBtn" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
+margin_top = 206.0
+margin_right = 89.0
+margin_bottom = 230.0
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 7 )
+text = "Settings"
+
+[node name="QuitBtn" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
+margin_top = 234.0
+margin_right = 44.0
+margin_bottom = 258.0
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 7 )
+text = "Quit"
+
+[node name="FpsLabel" parent="." instance=ExtResource( 10 )]
+
+[node name="SettingsMenu" parent="." instance=ExtResource( 12 )]
+
+[node name="ControlsPopup" parent="." instance=ExtResource( 25 )]
+
+[node name="AnimationPlayerIn" type="AnimationPlayer" parent="ControlsPopup"]
+
+[node name="HowToPlayPopup" parent="." instance=ExtResource( 8 )]
+
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/StartBtn" to="." method="_on_StartBtn_pressed"]
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/HowToPlayBtn" to="." method="_on_HowToPlayBtn_pressed"]
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/ControlsBtn" to="." method="_on_ControlsBtn_pressed"]
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/SettingsBtn" to="." method="_on_SettingsBtn_pressed"]
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/QuitBtn" to="." method="_on_QuitBtn_pressed"]
+
+[editable path="Environment/Fish1/Fish_1"]
+[editable path="Environment/Fish2/Fish_1"]
+[editable path="Environment/Fish3/Fish_1"]
+[editable path="Environment/Napoleon"]
+[editable path="ControlsPopup"]

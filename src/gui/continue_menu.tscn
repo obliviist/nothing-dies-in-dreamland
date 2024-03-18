@@ -1,0 +1,198 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://src/gui/gozo_font_tabs.tres" type="DynamicFontData" id=1]
+[ext_resource path="res://src/gui/continue_bg.png" type="Texture" id=2]
+[ext_resource path="res://src/gui/settings_menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/gui/continue_menu.png" type="Texture" id=4]
+[ext_resource path="res://src/gui/continue_menu.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFontData" id=24]
+font_path = "res://src/gui/gozo.ttf"
+
+[sub_resource type="DynamicFont" id=22]
+size = 34
+font_data = SubResource( 24 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="DynamicFontData" id=25]
+font_path = "res://src/gui/gozo.ttf"
+
+[sub_resource type="DynamicFont" id=23]
+size = 48
+font_data = SubResource( 25 )
+
+[sub_resource type="StyleBoxFlat" id=32]
+bg_color = Color( 0.941176, 0.235294, 0.47451, 1 )
+border_width_left = 4
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color( 0.941176, 0.235294, 0.47451, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="DynamicFontData" id=27]
+antialiased = false
+font_path = "res://src/gui/gozo.ttf"
+
+[sub_resource type="DynamicFont" id=16]
+font_data = SubResource( 27 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0.129412, 0.129412, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 6
+border_width_right = 6
+border_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+border_blend = true
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id=29]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 4
+border_width_right = 4
+border_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+border_blend = true
+
+[sub_resource type="DynamicFontData" id=30]
+antialiased = false
+font_path = "res://src/gui/gozo.ttf"
+
+[sub_resource type="DynamicFont" id=31]
+size = 6
+font_data = SubResource( 30 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=33]
+default_font = SubResource( 12 )
+Button/colors/font_color = Color( 1, 1, 0.247059, 1 )
+Button/colors/font_color_disabled = Color( 0.901961, 0.901961, 0.901961, 0.2 )
+Button/colors/font_color_hover = Color( 1, 1, 1, 1 )
+Button/colors/font_color_pressed = Color( 0.396078, 0.396078, 0.396078, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = SubResource( 22 )
+Button/styles/disabled = SubResource( 7 )
+Button/styles/focus = SubResource( 8 )
+Button/styles/hover = SubResource( 9 )
+Button/styles/normal = SubResource( 10 )
+Button/styles/pressed = SubResource( 11 )
+Label/colors/font_color = Color( 0.498039, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = SubResource( 23 )
+Label/styles/normal = null
+OptionButton/styles/hover = SubResource( 32 )
+OptionButton/styles/normal = SubResource( 32 )
+OptionButton/styles/pressed = SubResource( 32 )
+TabContainer/fonts/font = SubResource( 16 )
+TabContainer/styles/panel = SubResource( 26 )
+TabContainer/styles/tab_bg = SubResource( 28 )
+TabContainer/styles/tab_fg = SubResource( 29 )
+Tabs/fonts/font = SubResource( 31 )
+
+[node name="Continue" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 33 )
+script = ExtResource( 5 )
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 507, 296 )
+texture = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="BG"]
+margin_left = -507.0
+margin_top = -296.0
+margin_right = 517.0
+margin_bottom = 304.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="Splash" type="Sprite" parent="BG/Background"]
+position = Vector2( 510, 299 )
+texture = ExtResource( 4 )
+
+[node name="CenterContainer" type="CenterContainer" parent="BG/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/Background/CenterContainer"]
+margin_left = 242.0
+margin_top = 153.0
+margin_right = 782.0
+margin_bottom = 446.0
+custom_constants/separation = 7
+
+[node name="YouWokeUp" type="Label" parent="BG/Background/CenterContainer/VBoxContainer"]
+margin_right = 540.0
+margin_bottom = 48.0
+text = "YOU WOKE UP!"
+align = 1
+valign = 1
+
+[node name="Result" type="Label" parent="BG/Background/CenterContainer/VBoxContainer"]
+margin_top = 55.0
+margin_right = 540.0
+margin_bottom = 103.0
+text = "You have scored:  points"
+align = 1
+valign = 1
+
+[node name="Control" type="Control" parent="BG/Background/CenterContainer/VBoxContainer"]
+margin_top = 110.0
+margin_right = 540.0
+margin_bottom = 110.0
+
+[node name="ContinueBtn" type="Button" parent="BG/Background/CenterContainer/VBoxContainer"]
+margin_top = 117.0
+margin_right = 540.0
+margin_bottom = 157.0
+rect_min_size = Vector2( 0, 40 )
+text = "Continue?"
+
+[node name="MenuBtn" type="Button" parent="BG/Background/CenterContainer/VBoxContainer"]
+margin_top = 164.0
+margin_right = 540.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 0, 40 )
+text = "Main Menu"
+
+[node name="SettingsBtn" type="Button" parent="BG/Background/CenterContainer/VBoxContainer"]
+margin_top = 211.0
+margin_right = 540.0
+margin_bottom = 246.0
+text = "Settings"
+
+[node name="QuitBtn" type="Button" parent="BG/Background/CenterContainer/VBoxContainer"]
+margin_top = 253.0
+margin_right = 540.0
+margin_bottom = 293.0
+rect_min_size = Vector2( 0, 40 )
+text = "Quit"
+
+[node name="SettingsMenu" parent="." instance=ExtResource( 3 )]
+
+[connection signal="pressed" from="BG/Background/CenterContainer/VBoxContainer/ContinueBtn" to="." method="_on_ContinueBtn_pressed"]
+[connection signal="pressed" from="BG/Background/CenterContainer/VBoxContainer/MenuBtn" to="." method="_on_MenuBtn_pressed"]
+[connection signal="pressed" from="BG/Background/CenterContainer/VBoxContainer/SettingsBtn" to="." method="_on_SettingsBtn_pressed"]
+[connection signal="pressed" from="BG/Background/CenterContainer/VBoxContainer/QuitBtn" to="." method="_on_QuitBtn_pressed"]

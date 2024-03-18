@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/gui/gozo_font_label.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/gui/timer_over.gd" type="Script" id=2]
+
+[node name="TimerOver" type="Control"]
+pause_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+pause_mode = 1
+autostart = true
+
+[node name="Time" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -94.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = 44.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

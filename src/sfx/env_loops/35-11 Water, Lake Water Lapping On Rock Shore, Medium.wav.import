@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/35-11 Water, Lake Water Lapping On Rock Shore, Medium.wav-e0dccbee74d1e3dde3950b79887d9b68.sample"
+
+[deps]
+
+source_file="res://src/sfx/env_loops/35-11 Water, Lake Water Lapping On Rock Shore, Medium.wav"
+dest_files=[ "res://.import/35-11 Water, Lake Water Lapping On Rock Shore, Medium.wav-e0dccbee74d1e3dde3950b79887d9b68.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

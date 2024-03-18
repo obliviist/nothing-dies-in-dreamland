@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Fish_Small_Jump_PSEF.130.wav-ef8606c5acb6c6d5a0d0e134e7ac5584.sample"
+
+[deps]
+
+source_file="res://src/sfx/one_shots/Fish_Small_Jump_PSEF.130.wav"
+dest_files=[ "res://.import/Fish_Small_Jump_PSEF.130.wav-ef8606c5acb6c6d5a0d0e134e7ac5584.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

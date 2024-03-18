@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://prototype_assets/TankRoom_Exports_gltf/TankRoom_Floor.glb" type="PackedScene" id=1]
+[ext_resource path="res://prototype_assets/TankRoom_Exports_gltf/TR_ROOF.material" type="Material" id=2]
+[ext_resource path="res://prototype_assets/TankRoom_Exports_gltf/TR_FLOOR.material" type="Material" id=3]
+
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, -1, 1, -1, 0, -1, -1, 0, 1, -1, -1, 1, -1, -1, -1, -1, 0, -1, -1, -1, -1, 1, 0, -1, -1, 0, -1, -1, -1, -1, 1, -1, -1, 1, 0, -1, 1, -1, -1, 1, 0, 1, 1, 0, -1, 1, -1, -1, 1, -1, 1, 1, 0, 1, 1, -1, 1, -1, 0, 1, 1, 0, 1, 1, -1, 1, -1, -1, 1, -1, 0, 1 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1, 0.1, 1 )
+
+[node name="TankRoom_Floor" instance=ExtResource( 1 )]
+
+[node name="TankRoom_Floor" parent="." index="0"]
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="TankRoom_Floor" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="TankRoom_Floor/StaticBody" index="0"]
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="TankRoom_Floor/StaticBody" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.114447, 0 )
+shape = SubResource( 2 )

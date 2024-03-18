@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://prototype_assets/tree_pack_1.1 by ElegantCrow/models/bush07.material" type="Material" id=1]
+[ext_resource path="res://prototype_assets/tree_pack_1.1 by ElegantCrow/models/bush07.fbx" type="PackedScene" id=2]
+
+[node name="bush07" instance=ExtResource( 2 )]
+
+[node name="bush07" parent="RootNode" index="0"]
+material/0 = ExtResource( 1 )

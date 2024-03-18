@@ -1,0 +1,131 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://prototype_assets/NPCs_Exports_gltf/Unnamed_01.glb" type="PackedScene" id=2]
+[ext_resource path="res://prototype_assets/NPCs_Exports_gltf/Unnamed_01.material" type="Material" id=3]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.5
+
+[sub_resource type="Animation" id=3]
+resource_name = "npc_sit"
+length = 0.833333
+loop = true
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Unnamed 01/Skeleton:head")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0.0666667, 1, 0, 0, 0, 0.00125993, 0, 0, 0.999999, 1, 1, 1, 0.133333, 1, 0, 0, 0, 0.00935896, 0, 0, 0.999956, 1, 1, 1, 0.333333, 1, 0, 0, 0, 0.0535125, 0, 0, 0.998567, 1, 1, 1, 0.4, 1, 0, 0, 0, 0.0603901, 0, 0, 0.998175, 1, 1, 1, 0.466667, 1, 0, 0, 0, 0.0585879, 0, 0, 0.998282, 1, 1, 1, 0.533333, 1, 0, 0, 0, 0.049389, 0, 0, 0.99878, 1, 1, 1, 0.733333, 1, 0, 0, 0, 0.00911322, 0, 0, 0.999959, 1, 1, 1, 0.8, 1, 0, 0, 0, 0.00137159, 0, 0, 0.999999, 1, 1, 1, 0.833333, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("Unnamed 01/Skeleton:hand.l")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0, 1, 0, 0, 0, -3.63377e-19, -3.49246e-10, -8.80027e-09, 1, 1, 1, 1, 0.833333, 1, 0, 0, 0, -3.63377e-19, -3.49246e-10, -8.80027e-09, 1, 1, 1, 1 )
+tracks/2/type = "transform"
+tracks/2/path = NodePath("Unnamed 01/Skeleton:lowerarm.l")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = PoolRealArray( 0, 1, 0, 0, 0, 1.71363e-07, 1.15484e-07, 1.49011e-08, 1, 1, 1, 1, 0.833333, 1, 0, 0, 0, 1.71363e-07, 1.15484e-07, 1.49011e-08, 1, 1, 1, 1 )
+tracks/3/type = "transform"
+tracks/3/path = NodePath("Unnamed 01/Skeleton:upperarm.l")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = PoolRealArray( 0, 1, 0, 0, 0, 3.72529e-08, -4.47035e-08, -1.04308e-07, 1, 1, 1, 1, 0.833333, 1, 0, 0, 0, 3.72529e-08, -4.47035e-08, -1.04308e-07, 1, 1, 1, 1 )
+tracks/4/type = "transform"
+tracks/4/path = NodePath("Unnamed 01/Skeleton:foot.l")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = PoolRealArray( 0, 1, 0, 0, 0, -2.24461e-24, -5.68434e-14, 1.31625e-11, 1, 1, 1, 1, 0.833333, 1, 0, 0, 0, -2.24461e-24, -5.68434e-14, 1.31625e-11, 1, 1, 1, 1 )
+tracks/5/type = "transform"
+tracks/5/path = NodePath("Unnamed 01/Skeleton:lowerleg.l")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = PoolRealArray( 0, 1, 0, 0, 0, -2.97681e-16, -2.79397e-09, -9.70249e-08, 1, 1, 1, 1, 0.833333, 1, 0, 0, 0, -2.97681e-16, -2.79397e-09, -9.70249e-08, 1, 1, 1, 1 )
+tracks/6/type = "transform"
+tracks/6/path = NodePath("Unnamed 01/Skeleton:upperleg.l")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = PoolRealArray( 0, 1, 0, 0, 0, 4.28404e-08, 9.03393e-08, -4.4704e-08, 1, 0.999989, 1.00001, 1, 0.833333, 1, 0, 0, 0, 4.28404e-08, 9.03393e-08, -4.4704e-08, 1, 0.999989, 1.00001, 1 )
+tracks/7/type = "transform"
+tracks/7/path = NodePath("Unnamed 01/Skeleton:hand.r")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = PoolRealArray( 0, 1, 0, 0, 0, 1.86264e-09, 5.82077e-10, -3.04499e-09, 1, 1, 1, 1, 0.833333, 1, 0, 0, 0, 1.86264e-09, 5.82077e-10, -3.04499e-09, 1, 1, 1, 1 )
+tracks/8/type = "transform"
+tracks/8/path = NodePath("Unnamed 01/Skeleton:lowerarm.r")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = PoolRealArray( 0, 1, 0, 0, 0, 3.72529e-08, -7.07805e-08, 3.55271e-15, 1, 1, 1, 1, 0.833333, 1, 0, 0, 0, 3.72529e-08, -7.07805e-08, 3.55271e-15, 1, 1, 1, 1 )
+tracks/9/type = "transform"
+tracks/9/path = NodePath("Unnamed 01/Skeleton:upperarm.r")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = PoolRealArray( 0, 1, 0, 0, 0, 3.72529e-08, 4.47035e-08, 1.04308e-07, 1, 1, 1, 1, 0.833333, 1, 0, 0, 0, 3.72529e-08, 4.47035e-08, 1.04308e-07, 1, 1, 1, 1 )
+tracks/10/type = "transform"
+tracks/10/path = NodePath("Unnamed 01/Skeleton:foot.r")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = PoolRealArray( 0, 1, 0, 0, 0, -2.24461e-24, 5.68434e-14, -1.31625e-11, 1, 1, 1, 1, 0.833333, 1, 0, 0, 0, -2.24461e-24, 5.68434e-14, -1.31625e-11, 1, 1, 1, 1 )
+tracks/11/type = "transform"
+tracks/11/path = NodePath("Unnamed 01/Skeleton:lowerleg.r")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = PoolRealArray( 0, 1, 0, 0, 0, -2.97681e-16, 2.79397e-09, 9.70249e-08, 1, 1, 1, 1, 0.0666667, 1, 0, 0, 0, -3.55645e-07, -1.42354e-07, 0.00745495, 0.999972, 1, 1, 1, 0.2, 1, 0, 0, 0, -3.64997e-06, -1.50278e-06, 0.0770079, 0.99703, 1, 1, 1, 0.266667, 1, 0, 0, 0, -3.40692e-06, -1.39016e-06, 0.0718428, 0.997416, 1, 1, 1, 0.333333, 1, 0, 0, 0, -2.42997e-06, -9.48875e-07, 0.0511707, 0.99869, 1, 1, 1, 0.533333, 1, 0, 0, 0, 1.67327e-06, 8.88458e-07, -0.0354126, 0.999373, 1, 1, 1, 0.6, 1, 0, 0, 0, 2.35655e-06, 1.19075e-06, -0.0498063, 0.998759, 1, 1, 1, 0.666667, 1, 0, 0, 0, 2.20637e-06, 1.1091e-06, -0.0466037, 0.998913, 1, 1, 1, 0.8, 1, 0, 0, 0, 2.0465e-07, 1.05287e-07, -0.00432535, 0.999991, 1, 1, 1, 0.833333, 1, 0, 0, 0, -2.97681e-16, 2.79397e-09, 9.70249e-08, 1, 1, 1, 1 )
+tracks/12/type = "transform"
+tracks/12/path = NodePath("Unnamed 01/Skeleton:upperleg.r")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = PoolRealArray( 0, 1, 0, 0, 0, 4.28404e-08, -9.03393e-08, 4.4704e-08, 1, 0.999989, 1.00001, 1, 0.833333, 1, 0, 0, 0, 4.28404e-08, -9.03393e-08, 4.4704e-08, 1, 0.999989, 1.00001, 1 )
+tracks/13/type = "transform"
+tracks/13/path = NodePath("Unnamed 01/Skeleton:body")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0.833333, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
+
+[node name="Unnamed_01" instance=ExtResource( 2 )]
+
+[node name="Model_NPC" parent="Unnamed 01/Skeleton" index="0"]
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Unnamed 01/Skeleton/Model_NPC" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Unnamed 01/Skeleton/Model_NPC/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.59619, 0.146972 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Unnamed 01/Skeleton/Model_NPC/StaticBody" index="1"]
+transform = Transform( 1, 0, 0, 0, -0.673129, 0.739525, 0, -0.739525, -0.673129, 0, 1.40928, 1.05532 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Unnamed 01/Skeleton/Model_NPC" index="1"]
+root_node = NodePath("../../../..")
+autoplay = "npc_sit"
+anims/npc_sit = SubResource( 3 )
